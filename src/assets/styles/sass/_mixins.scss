@@ -1,0 +1,26 @@
+@mixin focused() {
+	outline: 0 none;
+	outline-offset: 0;
+	transition: box-shadow 0.2s;
+	box-shadow: var(--focus-ring);
+}
+
+@mixin focused-inset() {
+	outline: 0 none;
+	outline-offset: 0;
+	transition: box-shadow 0.2s;
+	box-shadow: inset var(--focus-ring);
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    $red: red($color);
+    $green: green($color);
+    $blue: blue($color);
+    
+    background: rgb($red, $green, $blue);
+	// background: $color;
+	// background: rgba($color, $opacity);
+	backdrop-filter: blur(16px) saturate(180%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	border: 1px solid rgba(209, 213, 219, 0.3);
+}

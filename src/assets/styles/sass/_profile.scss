@@ -1,0 +1,86 @@
+.layout-profile {
+  text-align: center;
+  padding: 20px 0;
+  img {
+    width: 56px;
+    margin: 10px;
+  }
+
+  .layout-profile-link {
+    cursor: pointer;
+    color: var(--surface-900);
+    display: inline-block;
+    margin-bottom: 0.75em;
+    transition: color $transitionDuration;
+
+    i {
+      display: inline-block;
+      font-size: 16px;
+      vertical-align: middle;
+      margin-left: 0.5em;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 -20px;
+    background-color: var(--surface-ground);
+
+    li {
+      button {
+        color: var(--surface-900);
+        width: 100%;
+        padding: 1em;
+        border: 0 none;
+        border-radius: 0;
+        cursor: pointer;
+        transition: color $transitionDuration;
+        
+        &:hover {
+            color: var(--primary-color);
+        }
+        span {
+          margin-left: 0.25em;
+          vertical-align: middle;
+        }
+
+        i {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &.layout-submenu-wrapper-enter-from,
+    &.layout-submenu-wrapper-leave-to {
+      max-height: 0;
+    }
+
+    &.layout-submenu-wrapper-enter-to,
+    &.layout-submenu-wrapper-leave-from {
+      max-height: 1000px;
+    }
+
+    &.layout-submenu-wrapper-leave-active {
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+    }
+
+    &.layout-submenu-wrapper-enter-active {
+      overflow: hidden;
+      transition: max-height 1s ease-in-out;
+    }
+  }
+}
+.menuitem-badge {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
